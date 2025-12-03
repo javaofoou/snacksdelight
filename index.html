@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snacks Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            border:0px;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 60px;
+        }
+        header #logo_container{
+                width: 170px;
+                height: 120px;
+                border-radius: 50%;
+                background-color: white;
+                margin-left: 50px;
+                 position: relative;
+                 top: 30px;
+            }
+        header img.logo{
+            width: 150px;
+            height: 100px;
+            border-radius: 50%;
+            /* border: 20px solid white; */
+        }
+        header nav{
+            margin-left: 120px;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+        }
+        header li{
+            margin: 0px 20px 0px 20px;
+        }
+        .extra_buttons{
+            margin-left: 60px;
+
+        }
+        .extra_buttons #user{
+           font-size: 1.5em;
+           width: 35px;
+           height: 35px;
+            background-color: rgb(255, 183, 0);
+            color: white;
+             border: 0px;
+             border-radius: 50%;
+             margin-right: 30px;
+        }
+        .extra_buttons #shop{
+            font-size: 1.2em;
+            color: white;
+            background-color: rgb(255, 183, 0);
+            border: 0px;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        .hero{
+            width: 100%;
+            height: 450px;
+            background-image: url("ice_cream_3.jpg");
+            background-repeat: no-repeat;
+            background-size:auto;
+        }
+         .hero #caption{
+            position: relative;
+            top: 150px;
+            left: 10%;
+         }
+        .hero #caption h1{
+            color: white;
+        }
+        .hero #caption p{
+            color: white;
+            width: 45%;
+            margin-top: 15px;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .hero #caption .shop{
+            background-color:rgb(255, 183, 0);
+            color: white;
+            width: 150px;
+            height: 37px;
+            font-weight: bold;
+            border: 0px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        section.aboutus{
+            width: 100%;
+            height: 400px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding-right: 100px;
+            justify-content: center;
+        }
+        img.product_image{
+            width: 350px;
+            height: 350px;
+            position: relative;
+            left: 200px;
+        }
+        .aboutus img.logo{
+            width: 290px;
+            height: 250px;
+            position: relative;
+            left: -100px;
+            opacity: 0.6;
+        }
+        section.aboutus article{
+            height: 100%;
+            padding-top: 50px;
+        }
+        article h2{
+             margin-bottom: 15px;
+        }
+        article p{
+            width: 70%;
+            text-align: justify;
+        }
+        article button{
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            background-color:rgb(242, 173, 0);
+            width: 130px;
+            height: 38px;
+            margin-top: 20px;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+        section.top-items{
+            width:100%;
+            height: 350px;
+            background-image: url("shawama3.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .items_heading{
+            width: 100%;
+            height: 100%;
+            background-color:rgba(242, 137,0,0.9);
+        }
+        .top-items .item-box{
+               width: 100%;
+               height: 100%;
+               display: flex;
+               justify-content: center;
+               gap: 30px;
+               align-items: center;
+               margin-top: -30px;
+        }
+
+        .item-box .item{
+            width: 20%;
+            height: 255px;
+            background-color: white;
+        }
+        .item img{
+            width: 95%;
+            height: 150px;
+            margin-left:2.5%;
+            margin-top: 5px;
+        }
+        .item h2{
+            text-align: center;
+            margin-top: 2px;
+        }
+        .item p{
+            text-align: center;
+        }
+        section.menu{
+           width: 100%;
+           height: 350px;
+        }
+        h2{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .menu-cards{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .cards{
+           width: 200px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction:column;   
+        }
+        .cards img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border-right:6px solid goldenrod;
+            border-top: 6px solid goldenrod;
+            border-bottom: 6px solid goldenrod;
+        }
+        .cards p{
+            text-align: center;
+        }
+        section.testimonial{
+            width: 100%;
+            height: 400px;
+            background-color: rgb(223, 223, 223);
+            padding-top: 30px;
+        }
+        .testimonial h2{
+            text-align: center;
+            margin-top: 30px;
+        }
+            .testimonial-container{
+               display: flex;
+               justify-content: center;
+               gap: 20px;
+            }
+           .testimonial-container .testimonial-cards{
+               width: 28%;
+               height:230px;
+               display: inline-block;
+               background-color: white;
+               padding: 10px;
+           }
+		   .testimonial-cards .user{
+		   display: flex;
+		   justify-content: flex-start;
+           flex-direction: row;
+           }
+		   .testimonial-cards .user img{
+		    width: 100px;
+			height: 100px;
+            margin-right: 10px;
+			border-radius: 7px;
+			}
+			.testimonial-cards .user-data .name{
+			     color: red;
+			}
+			.user-data .meta-data{
+			 color: black;
+			} 
+
+            section.inspired{
+                width: 100%;
+                padding: 20px;
+            }
+            section.inspired h2{
+                font-size: 1.2em;
+                text-align: center;
+            }
+            section.inspired .inspired-box{
+                width: 80%;
+                display: flex;
+                padding: 20px;
+                margin-left: 10%;
+                justify-content: center;
+                align-items: center;
+                flex-wrap:wrap;
+                gap: 10px;
+            }
+            @keyframes img-animate{
+                0%{
+                   opacity: 0;
+                   visibility: hidden;
+                   transform: translateY(100%);
+                }
+                100%{
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0%);                }
+            }
+            .inspired-box img{
+                width: 200px;
+                height: 180px;
+                opacity: 0;
+                visibility: hidden;
+                position: relative;
+                animation: img-animate 0.5s 2.7s ease forwards;
+                transform: translateY(100%);
+            }
+            .inspired-box img:nth-child(1){
+                 animation-delay: 0.5s;
+            }
+            .inspired-box img:nth-child(2){
+                 animation-delay: 1.5s;  
+            } 
+                .inspired-box img:nth-child(3){
+                 animation-delay: 2s;  
+            } 
+                .inspired-box img:nth-child(4){
+                 animation-delay: 2.5s;  
+            } 
+            footer{
+                background-color: black;
+                width: 100%;
+                color: white;
+            }
+            footer .block1{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .block1 .brand_logo img{
+                width: 200px;
+                height: 170px;
+                margin-left: 50px;
+            }
+            footer .brand_logo p{
+                width: 60%;
+                text-align: center;
+            }
+            footer .extra_links ul{
+                display: flex;
+                flex-direction: column;
+            }
+            footer .extra_links:nth-child(4){
+              position: relative;
+              top:-17px;
+              text-align: center;
+            }
+            footer .extra_links i{
+                margin-right: 15px;
+            }
+            footer .block2{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction:row;
+            }
+            .block2 h2{
+                font-size: 1.0em;
+            }
+            .block2 .socials{
+                padding-left: 50px;
+            }
+            .block2 .socials h2{
+                margin-bottom: 10px;
+            }
+            .block2 .socials .social-icons{
+                border: 2px solid white;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                padding: 6px;
+            }
+            .block2 .partner img{
+                width: 80px;
+                height: 30px;
+                border: 10px;
+
+            }
+            .block2 .qr_code  img{
+              width: 100px;
+              height: 100px;
+              border: 12px;
+              margin-right: 20px;
+              border: 20px solid white;
+            }
+            </style>
+</head>
+<body>
+    <header>
+        <div id="logo_container">
+        <img src="snacks_logo.png" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a>Home</a></li>
+                 <li><a>About</a></li>
+                  <li><a>Menu</a></li>
+                   <li><a>Available Snacks</a></li>
+                   <li><a>Top Snacks</a></li>
+                   <li><a>Our Address</a></li>       
+            </ul>
+        </nav>
+        <div class="extra_buttons">
+            <button id="user"><i class="fa fa-user-circle"></i></button>
+            <button id="shop">Shop <i class="fa fa-shopping-cart"></i></button>
+        </div>
+    </header>
+    <div class="hero">
+     <div id="caption">
+        <h1>MOTOR CITY FRIES</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ullam vel quidem quos velit eaque vitae numquam odio soluta. Officiis!</p>
+        <button class="shop">Buy</button>
+     </div>
+    </div>
+    <section class="aboutus">
+        <img src="about_img.png" class="product_image">
+        <img src="snacks_logo.png" class="logo">
+        <article>
+            <h2>ABOUT US</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quos nesciunt quas qui fuga eius ex architecto, omnis earum odio. Adipisci libero in nemo est ipsam qui voluptates placeat fugit Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolore maxime quas fuga nesciunt dolorum eum iure architecto! Numquam, consequatur.</p>
+            <button>Read More</button>
+        </article>
+    </section>
+    <section class="top-items">
+              <div class="items_heading">
+             <h1 style="color: white; text-align: center; margin-top: 20px;">OUR TOPPINGS</h1>
+        <div class="item-box">
+        <div class="item">
+        <img src="ice_cream.jpeg">
+        <h2>Product Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos recusandae mollitia. Id, ipsum nulla.</p>
+        </div>
+         <div class="item">
+        <img src="shawarma.jpeg">
+        <h2>Product Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos recusandae mollitia. Id, ipsum nulla.</p>
+        </div>
+         <div class="item">
+        <img src="pie.jpeg">
+        <h2>Product Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos recusandae mollitia. Id, ipsum nulla.</p>
+        </div>
+        </div>
+        </div>
+    </section>
+    <section class="menu">
+        <h2>Our Menu</h2>
+     <div class="menu-cards">
+     <div class="cards">
+        <img src="shawama3.jpeg" class="menu">
+        <h3>shawama</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ea eligendi iste, ipsum dignissimos quae maxime odit quisquam ad</p>
+     </div>
+     <div class="cards">
+        <img src="ice_cream_menu.jpeg" class="menu">
+        <h3>Ice Cream</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ea eligendi iste, ipsum dignissimos quae maxime odit quisquam ad</p>
+     </div>
+     <div class="cards">
+        <img src="pie.jpeg" class="menu">
+        <h3>PIE</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ea eligendi iste, ipsum dignissimos quae maxime odit quisquam</p>
+     </div>
+     <div class="cards">
+        <img src="milkshake.jpeg" class="menu">
+        <h3>milkshake</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ea eligendi iste, ipsum dignissimos quae maxime odit quisquam</p>
+     </div>
+     </div>
+    </section>
+    <section class="testimonial">
+       b <h2>Our Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-cards">    
+			<div class="user">
+              <img src="pie.jpeg" class="user">
+			  <div class="user-data">
+			   <div class="name">John doe</div>
+			   <div class="meta-data">hxhjjj jdfshdhj jhfj</div>
+			  </div>
+			  </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ea eligendi iste,
+			   ipsum dignissimos quae maxime odit quisquam</p>
+            </div>
+ <div class="testimonial-cards">
+			<div class="user">
+              <img src="pie.jpeg" class="user">
+			  <div class="user-data">
+			   <div class="name">John doe</div>
+			   <div class="meta-data">hxhjjj jdfshdhj jhfj</div>
+			  </div>
+			  </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, ea eligendi iste,
+			   ipsum dignissimos quae maxime odit quisquam</p>
+            </div>
+        </div>
+    </section>
+    <section class="inspired">
+     <h2>GET INSPIRED</h2>
+     <div class="inspired-box">
+     <img src="inspire1.jpeg">
+     <img src="inspire2.jpeg">
+     <img src="inspire3.jpeg">
+     <img src="inspire4.jpeg">
+     <img src="inspire5.jpeg">
+     <img src="inspire6.jpeg">
+     <img src="inspire7.jpeg">
+     <img src="inspire8.jpeg">
+     </div>
+    </section>
+   <footer>
+    <div class="block1">
+        <div class="brand_logo">
+            <img src="snacks_logo.png">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing<br>elit. Iusto, praesentium. Itaque unde perferendis eius sapiente.</p>
+            </p>
+        </div>
+        <div class="extra_links">
+            <h2>Extra Links</h2>
+            <ul>
+                <li><a>Sitemap</a></li>
+                <li><a>Adverise With Us</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>Contact Us</a></li>
+                <li><a>Eplore</a></li>
+            </ul>
+        </div>
+            <div class="extra_links">
+            <h2>Extra Links</h2>
+            <ul>
+                <li><a>Our Service</a></li>
+                <li><a>Check Menu</a></li>
+                <li><a>FAQ</a></li>
+                <li><a>Review</a></li>
+            </ul>
+        </div>
+        <div class="extra_links">
+            <h2>Contact  Us</h2>
+            <div class="contact-list"><i class="fa fa-phone"></i> +2348117157029</div>
+            <div class="contact-list"><i class="fa fa-envelope"></i>info@snacks_delight.com</div>
+            <div class="contact-list"><i class=i class="fa fa-map-marker" aria-hidden="true"></i> 10,Saint. Johes Street,Johannesburg</div>
+        </div>
+    </div>
+    <div class="block2">
+        <div class="socials">
+            <h2>CONNECT WITH US</h2>
+            <span class="social-icons"><i class="fa fa-facebook-square"></i></span>
+            <span class="social-icons"><i class="fa fa-youtube-play"></i></span>
+            <span class="social-icons"><i class="fa fa-google-plus"></i></span>
+            <span class="social-icons"><i class="fa fa-whatsapp"></i></span>
+        </div>
+        <div class="partner">
+            <h2>OUR PARTNER</h2>
+            <div class="partner_brand">
+                <img src="partner_img1.png">
+                <img src="partner_img2.jpeg">
+                <img src="partner_img3.jpeg">
+                <img src="partner_img5.png">
+                <img src="partner_img7.png">
+            </div>
+        </div>
+        <div class="qr_code">
+            <img src="images (26).png">
+        </div>
+    </div>
+   </footer>
+</body>
+</html>
+
+
